@@ -1,0 +1,124 @@
+.circular-detail-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .back-btn {
+    background: none;
+    border: 1px solid #cbd5e0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #4a5568;
+  }
+  
+  .back-btn:hover {
+    background: #f7fafc;
+  }
+  
+  .circular-document {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  
+  .circular-doc-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .doc-logo {
+    font-size: 36px;
+    color: #4361ee;
+    margin-bottom: 8px;
+  }
+  
+  .doc-org-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+  }
+  
+  .doc-divider {
+    border: none;
+    border-top: 2px solid #e2e8f0;
+    margin: 20px 0;
+  }
+  
+  .doc-type-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .doc-type-badge {
+    background: #ebf4ff;
+    color: #2b6cb0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .doc-priority-badge {
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .doc-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+  }
+  
+  .doc-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .doc-meta-item {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .meta-label {
+    font-weight: 600;
+    color: #718096;
+    width: 60px;
+  }
+  
+  .meta-value {
+    color: #2d3748;
+  }
+  
+  .doc-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4a5568;
+    min-height: 100px;
+  }
+  
+  .doc-footer {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 13px;
+  }
+  
+  .circular-detail-loading {
+    padding: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #718096;
+  }
