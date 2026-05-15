@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import API_BASE_URL from '../config/api';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -23,7 +24,7 @@ const Dashboard = () => {
     const fetchCirculars = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/circular/all', {
+        const response = await fetch(`${API_BASE_URL}/api/circular/all`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
