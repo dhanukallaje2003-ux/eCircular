@@ -1,10 +1,12 @@
-const express = require('express');
-const { register, login } = require('../controllers/authController');
+const API = process.env.REACT_APP_API_URL;
 
-const router = express.Router();
-
-router.post('/register', register);
-router.post('/login', login);
-
-module.exports = router;
-
+const response = await fetch(`${API}/api/auth/login`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    email,
+    password
+  })
+});
