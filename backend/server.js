@@ -15,7 +15,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://e-circular-z3qewu0jm-abhimos-projects.vercel.app'
+    'https://e-circular-gqa96p98n-abhimos-projects.vercel.app'
   ],
   credentials: true
 }));
