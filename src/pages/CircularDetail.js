@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
+import API_BASE_URL from '../config/api';
 import './CircularDetail.css';
 
 const CircularDetail = () => {
@@ -30,13 +31,13 @@ const CircularDetail = () => {
   const fetchCircular = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/circular/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/circular/${id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
       if (data.success) {
         setCircular(data.data);
-        await fetch(`http://localhost:5000/api/circular/${id}/view`, {
+        await fetch(`${API_BASE_URL}/api/circular/${id}/view`, {
           method: 'POST',
           headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -70,7 +71,7 @@ const CircularDetail = () => {
     setArchiving(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/circular/${id}/archive`, {
+      const response = await fetch(`${API_BASE_URL}/api/circular/${id}/archive`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -93,7 +94,7 @@ const CircularDetail = () => {
     setHiding(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/circular/${id}/hide`, {
+      const response = await fetch(`${API_BASE_URL}/api/circular/${id}/hide`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -116,7 +117,7 @@ const CircularDetail = () => {
     setRestoring(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/circular/${id}/restore`, {
+      const response = await fetch(`${API_BASE_URL}/api/circular/${id}/restore`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -148,7 +149,7 @@ const CircularDetail = () => {
   const handleEditSave = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/circular/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/circular/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
