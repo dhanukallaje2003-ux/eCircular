@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../config/api';
 
 const Archive = () => {
 
@@ -13,13 +14,13 @@ const Archive = () => {
       const token = localStorage.getItem('token');
 
       // Fetch manually archived
-      const archivedRes = await fetch('http://localhost:5000/api/circular/archived', {
+      const archivedRes = await fetch(`${API_BASE_URL}/api/circular/archived`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const archivedData = await archivedRes.json();
 
       // Fetch all circulars for 30 days check
-      const allRes = await fetch('http://localhost:5000/api/circular/all', {
+      const allRes = await fetch(`${API_BASE_URL}/api/circular/all`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const allData = await allRes.json();
@@ -60,7 +61,7 @@ const Archive = () => {
     if (!window.confirm(`Restore "${title}" back to active?`)) return;
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/circular/${id}/restore`, {
+      const response = await fetch(`${API_BASE_URL}/api/circular/${id}/restore`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -81,7 +82,7 @@ const Archive = () => {
     if (!window.confirm(`Permanently delete "${title}"? This cannot be undone.`)) return;
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/circular/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/circular/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
