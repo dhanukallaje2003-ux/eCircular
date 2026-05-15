@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../config/api';
 
 const UserArchive = () => {
 
@@ -13,13 +14,13 @@ const UserArchive = () => {
         const token = localStorage.getItem('token');
 
         // Fetch manually archived
-        const archivedRes = await fetch('http://localhost:5000/api/circular/archived', {
+        const archivedRes = await fetch(`${API_BASE_URL}/api/circular/archived`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const archivedData = await archivedRes.json();
 
         // Fetch all for 30 days check
-        const allRes = await fetch('http://localhost:5000/api/circular/all', {
+        const allRes = await fetch(`${API_BASE_URL}/api/circular/all`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const allData = await allRes.json();
