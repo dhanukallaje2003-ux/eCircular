@@ -1,8 +1,8 @@
 -- Database: circular_management
 -- Run this SQL to create tables
 
-CREATE DATABASE IF NOT EXISTS circular_management;
-USE circular_management;
+-- CREATE DATABASE IF NOT EXISTS circular_management;
+-- USE circular_management;
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
