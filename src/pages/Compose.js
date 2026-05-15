@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
+import API_BASE_URL from '../config/api';
 import "./Compose.css";
 
 const Compose = () => {
@@ -149,7 +150,7 @@ Respond in this EXACT JSON format only, no other text, no markdown:
 
       const token = localStorage.getItem('token');
 
-      const response = await fetch('http://localhost:5000/api/circular/create', {
+      const response = await fetch(`${API_BASE_URL}/api/circular/create`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
